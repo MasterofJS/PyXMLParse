@@ -13,7 +13,7 @@ with open("batch_response_data.json") as json_file:
 ns = {'ns': 'http://www.transunion.com/namespace/pfs/v4'}
 for data in json_data:
     root = ET.fromstring(data)
-        
+         
     print "TRANSUNION CREDIT REPORT\n"
     print "<FOR>           <SUB NAME>          <MKT SUB>  <INFILE>    <DATE>     <TIME>"
     print "(I) " + ("X" * len(root.find(".//ns:industryCode", ns).text)).ljust(12) + "XXXXX XXXXX".ljust(20) + "00 XX".ljust(11) + "0/00".ljust(12) + "00/00/00".ljust(11) + "10:00CT\n"
